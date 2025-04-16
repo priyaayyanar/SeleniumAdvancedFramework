@@ -1,4 +1,6 @@
 package com.thetestingacademy.pages.pageObjectModel;
 
-public class LoginPage {
+public class DashBoardPage_POM {
+
+
 }
