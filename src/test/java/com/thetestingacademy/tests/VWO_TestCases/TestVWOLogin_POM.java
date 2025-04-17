@@ -1,5 +1,7 @@
 package com.thetestingacademy.tests.VWO_TestCases;
 
+import com.thetestingacademy.base.CommonToAllTest;
+import com.thetestingacademy.driver.DriverManager;
 import com.thetestingacademy.pages.pageObjectModel.LoginPage_POM;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
@@ -10,7 +12,7 @@ import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class TestVWOLogin_POM {
+public class TestVWOLogin_POM extends CommonToAllTest {
 
     @Owner("Priya Ayyanar")
     @Description("Verify that invalid creds give error msg")
@@ -18,7 +20,7 @@ public class TestVWOLogin_POM {
     public void test_VWOLogin_Negative(){
 
         // Manage Drive part
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = DriverManager.getDriver();
         String URL = "https://app.vwo.com";
         driver.get(URL);
         driver.manage().window().maximize();
