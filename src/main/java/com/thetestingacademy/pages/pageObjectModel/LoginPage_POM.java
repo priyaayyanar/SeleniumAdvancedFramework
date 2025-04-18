@@ -1,5 +1,7 @@
 package com.thetestingacademy.pages.pageObjectModel;
 
+import com.thetestingacademy.base.CommonToAllPages;
+import com.thetestingacademy.utils.PropertiesReader;
 import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LoginPage_POM {
+public class LoginPage_POM extends CommonToAllPages {
 
     WebDriver driver;
     // Default Constructor
@@ -24,11 +26,13 @@ public class LoginPage_POM {
 
     //Page Actions
     public String LoginToVWO_InvalidCreds(String user, String pwd){
-        driver.findElement(userName).sendKeys(user);
-        driver.findElement(password).sendKeys(pwd);
-        driver.findElement(signin_btn).click();
 
-        WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(3));
+        driver.get(PropertiesReader.readKey("url"));
+        enterInput(userName,user);
+        enterInput(password,pwd);
+        clickElement(signin_btn);
+
+        WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(error_msg));
 
         String errorMsgTxt = driver.findElement(error_msg).getText();
@@ -36,10 +40,13 @@ public class LoginPage_POM {
     }
 
     public void loginToVWO_ValidCrdns(String user, String pwd){
-        driver.findElement(userName).sendKeys(user);
-        driver.findElement(password).sendKeys(pwd);
-        driver.findElement(signin_btn).click();
 
+        driver.get(PropertiesReader.readKey("url"));
+        enterInput(userName,user);
+        enterInput(password,pwd);
+        clickElement(signin_btn);
+
+        WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
 }
