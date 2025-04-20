@@ -29,6 +29,7 @@ public class CommonToAllPages {
         getDriver().findElement(by).sendKeys(key);
     }
 
+    // Method for PF
     public void enterInput(WebElement by, String key){
         by.sendKeys(key);
     }

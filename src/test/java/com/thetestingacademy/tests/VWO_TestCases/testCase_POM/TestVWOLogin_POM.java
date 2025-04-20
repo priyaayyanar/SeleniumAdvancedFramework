@@ -1,4 +1,4 @@
-package com.thetestingacademy.tests.VWO_TestCases;
+package com.thetestingacademy.tests.VWO_TestCases.testCase_POM;
 
 import com.thetestingacademy.base.CommonToAllTest;
 import com.thetestingacademy.driver.DriverManager;
