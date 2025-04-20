@@ -44,9 +44,11 @@ public class DriverManager {
                     firefoxOptions.addArguments("--start-maximized");
                     firefoxOptions.addArguments("--guest");
                     driver = new FirefoxDriver(firefoxOptions);
+                    String URL = "https://awesomeqa.com/webtable1.html";
+                    driver.get(URL);
                     break;
                 default:
-                    System.out.println("Server not found");
+                    System.out.println("Browser not found");
             }
         }
     }

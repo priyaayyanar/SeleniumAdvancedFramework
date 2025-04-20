@@ -2,13 +2,11 @@ package com.thetestingacademy.tests.VWO_TestCases;
 
 import com.thetestingacademy.base.CommonToAllTest;
 import com.thetestingacademy.driver.DriverManager;
-import com.thetestingacademy.pages.pageObjectModel.DashBoardPage_POM;
-import com.thetestingacademy.pages.pageObjectModel.LoginPage_POM;
+import com.thetestingacademy.pages.pageObjectModel.vwo.DashBoardPage_POM;
+import com.thetestingacademy.pages.pageObjectModel.vwo.LoginPage_POM;
 import com.thetestingacademy.utils.PropertiesReader;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
